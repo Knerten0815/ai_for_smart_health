@@ -1,12 +1,10 @@
-name: ai_smart_health
+name: ai4sh
 dependencies:
-  - python=3.9
   - numpy
   - pandas
   - pip
   - scikit-learn
   - seaborn
-  - shap
   - tensorflow
   - tqdm
   - pytest

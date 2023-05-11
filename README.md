@@ -20,3 +20,21 @@ This course will include a lot of machine learning, mostly also deep learning. F
 Scikit-learn can be accelerated using scikit-learn-intelex (https://intel.github.io/scikit-learn-intelex), although this will not be needed for the live coding sessions we do.
 
 Tensorflow can make use of NVIDIA graphic cards, which can greatly enhance deep learning model training. While this allows us to use a lot of low-level optimization, it can be tricky and time consuming to get this up and running.
+
+
+Für alle die auch Probleme mit dem shap Package auf Windows hatten: Ich bekomme es jetzt zum laufen, indem ich diese beiden .yml files nacheinander in einem frischen conda environment installiere. create_environment.yml installiert nur python, llvmlite, numba und shap. Diese 3 Packages vertragen sich irgendwie nicht so gut. Die zweite .yml file installiert dann alle anderen packages aus dem ursprünglichen environment.yml. 
+
+ 
+## shap Troubleshooting
+If you can't import shap in the environment you have created, try to create it this way:
+```
+conda update -n base -c defaults conda
+conda env create -f create_environment.yml
+conda activate ai4sh
+conda env update --file update_environment.yml --prune
+```
+
+
+
+
+
