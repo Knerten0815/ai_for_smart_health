@@ -1,6 +1,0 @@
-name: ai4sh-gpu
-dependencies:
-  - python=3.9
-  - llvmlite
-  - numba
-  - shap
