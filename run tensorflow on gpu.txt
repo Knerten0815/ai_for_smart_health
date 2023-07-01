@@ -1,0 +1,38 @@
+Install GPU drivers
+Install Docker Desktop
+Open Docker Desktop
+
+1. Using docker run:
+Run cmd: docker run --gpus all -it -p 8888:8888 -v S:\docker-desktop-data\shared_folder:/shared_folder tensorflow/tensorflow:latest-gpu-jupyter
+    - set 'S:\docker-desktop-data\shared_folder' to whatever you want your shared_folder to be
+Open VSCode
+    - Install Dev Containers extension if you havent already
+    - click the green >< icon in the bottom left
+    - select 'attach to running container' and select the container
+        - new VSCode window opens
+    - open a jupyter notebook
+    - select kernel 'Existing Jupyter Server'
+        - paste the jupyter URL from the cmd where you ran docker
+
+2. Using docker compose: (i think this works better?)
+Follow instructions here:
+https://thegeeksdiary.com/2023/01/29/how-to-setup-tensorflow-with-gpu-support-using-docker/
+
+CMD in the folder where your docker-compose.yml lies
+CMD: docker-compose up
+
+Open VSCode
+    - Install Dev Containers extension if you havent already
+    - click the green >< icon in the bottom left
+    - select 'attach to running container' and select the container
+        - new VSCode window opens
+    - File -> Open folder
+        - select the shared_folder from the docker-compose file (/environment if you didnt change it)
+Selecting Notebook kernel:
+    1. Using Python Interpreter
+        - press Ctrl+Shift+P (open VSCode command palette)
+        - search for Python: Select Interpreter
+        - select it!
+    2. Using jupyter Server
+        - select kernel 'Existing Jupyter Server'
+        - select the running jupyter server or try pasting localhost:8888
